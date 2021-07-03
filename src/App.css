@@ -2,5 +2,10 @@ body {
     font-family: 'Poppins';
     box-sizing: border-box;
     background-color: #e0e0e0;
-    padding: 10px 60px;
+    padding: 10px 40px;
+}
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
 }
