@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shoppage/shoppage';
 import Header from './components/header/header';
+import SignInSignUp from './pages/signin-signup/SignInSignUp';
 // Styling
 import './App.css'
 
@@ -15,7 +16,9 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} /> 
-          <Route path='/shop' component={ShopPage} /> 
+          <Route path='/shop' component={ShopPage} />
+          <Route path='/signin' component={SignInSignUp} />
+
         </Switch> 
       </div>
     </BrowserRouter>
