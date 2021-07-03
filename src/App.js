@@ -1,26 +1,11 @@
 // Libraries
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// Components
+// Pages
 import HomePage from './pages/homepage/homepage';
+import ShopPage from './pages/shoppage/shoppage';
 // Styling
 import './App.css'
-
-const HatsPage = () => {
-  return(
-    <div>
-      <h1>Hats Page</h1>
-    </div>
-  );
-}
-
-const ShopPage = () => {
-  return(
-    <div>
-      <h1>Shop Page</h1>
-    </div>
-  );
-}
 
 function App() {
   return (
@@ -28,7 +13,6 @@ function App() {
       <div>
         <Switch>
           <Route exact path='/' component={HomePage} /> 
-          <Route path='/hats' component={HatsPage} /> 
           <Route path='/shop' component={ShopPage} /> 
         </Switch> 
       </div>

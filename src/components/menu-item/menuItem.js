@@ -2,6 +2,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './menuItem.scss'
 
+
+// onClick={() => history.push(`${match.url}${linkUrl}`) }
 const MenuItem = ({ title, url, size, history, linkUrl, match }) => {
     return(
         <div  
