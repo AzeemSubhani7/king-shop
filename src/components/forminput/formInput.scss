@@ -13,9 +13,9 @@ $main-color: black;
 
   .form-input {
     background: none;
-    background-color: #e0e0e0;
+    background-color: #e0e0e0 !important;
     border-radius: 20px;
-    color: $sub-color;
+    color: $sub-color !important;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
@@ -24,7 +24,6 @@ $main-color: black;
     border-radius: 0px;
     border-bottom: 3px solid $sub-color;
     margin: 25px 0;
-
     &:focus {
       outline: none;
     }
@@ -48,6 +47,7 @@ $main-color: black;
     top: 10px;
     transition: 300ms ease all;
     backface-visibility: hidden;
+
 
     &.shrink {
       @include shrinkLabel();
