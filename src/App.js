@@ -1,6 +1,6 @@
 // Libraries
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth, createUserProfileDocument } from './firebase/firebase.util';
 // Pages
@@ -48,12 +48,19 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} /> 
           <Route path='/shop' component={ShopPage} />
-          <Route path='/signin' component={SignInSignUp} />
+          <Route exact path='/signin' 
+          render={() => this.props.currentUser ? (<Redirect to='/' />) : <SignInSignUp /> } />
 
         </Switch> 
       </div>
     </BrowserRouter>
     )
+  }
+}
+
+const mapStateToProps = ({ user }) => {
+  return {
+    currentUser: user.currentUser
   }
 }
 
@@ -63,4 +70,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

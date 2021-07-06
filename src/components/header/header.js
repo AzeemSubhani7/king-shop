@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux' // It is a higher order component
 
 import { auth } from '../../firebase/firebase.util' 
+import CartIcon from '../carticon/cartIcon'
+import CartDropdown from '../cartdropdown/cartDropdown'
 import './header.scss'
 
 import { ReactComponent as Logo } from '../../assets/crown.svg'
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
     return(
         <div className='header'>
             <Link to='/' className='logo-container'>
@@ -26,14 +28,17 @@ const Header = ({ currentUser }) => {
                     :
                     <Link to='/signin' ><div className='option' >SIGN IN</div></Link>
                 }
+                <CartIcon />
             </div>
+            { hidden ? null : <CartDropdown /> }
         </div>
     )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => {
     return {
-        currentUser: state.user.currentUser
+        currentUser,
+        hidden
     }
 }
 
