@@ -12,12 +12,13 @@
     right: 40px;
     z-index: 5;
     opacity: 0.9;
+    // overflow-y: scroll;
   
     .cart-items {
       height: 240px;
       display: flex;
       flex-direction: column;
-      overflow: scroll;
+      overflow-y: scroll;
     }
   
     button {
