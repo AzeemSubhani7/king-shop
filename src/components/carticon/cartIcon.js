@@ -4,12 +4,13 @@ import { connect } from 'react-redux'
 import { toggleCartHideen } from '../../redux/cart/cartAction'
 
 import './cartIcon.scss'
+import { selectCartItemsCount } from '../../redux/cart/cartSelector'
 
-const CartIcon = ({ toggleCartHideen }) => {
+const CartIcon = ({ toggleCartHideen, itemCount }) => {
     return(
         <div className='cart-icon' onClick={toggleCartHideen}>
             <ShoppingIcon className='shopping-icon' />
-            <span className='item-count'>0</span>
+            <span className='item-count'>{itemCount}</span>
         </div>
     )
 }
@@ -20,4 +21,10 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(CartIcon);
+const mapStateToProps = (state) => {
+    return {
+        itemCount: selectCartItemsCount(state)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);

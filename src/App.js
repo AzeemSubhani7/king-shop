@@ -11,6 +11,7 @@ import SignInSignUp from './pages/signin-signup/SignInSignUp';
 import { setCurrentUser } from './redux/user/userActions';
 // Styling
 import './App.css'
+import { selectCurrentUser } from './redux/user/userSelector';
 
 
 class App extends React.Component {
@@ -58,9 +59,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => {
+const mapStateToProps = state => {
   return {
-    currentUser: user.currentUser
+    currentUser: selectCurrentUser(state)
   }
 }
 
