@@ -3,12 +3,13 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth, createUserProfileDocument } from './firebase/firebase.util';
-// Pages
+// Pages and Components
 import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shoppage/shoppage';
 import Header from './components/header/header';
 import SignInSignUp from './pages/signin-signup/SignInSignUp';
 import { setCurrentUser } from './redux/user/userActions';
+import CheckoutPage from './pages/checkout/checkout';
 // Styling
 import './App.css'
 import { selectCurrentUser } from './redux/user/userSelector';
@@ -49,6 +50,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} /> 
           <Route path='/shop' component={ShopPage} />
+          <Route excat path='/checkout' component={CheckoutPage} />
           <Route exact path='/signin' 
           render={() => this.props.currentUser ? (<Redirect to='/' />) : <SignInSignUp /> } />
 

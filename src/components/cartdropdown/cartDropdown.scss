@@ -13,7 +13,12 @@
     z-index: 5;
     opacity: 0.9;
     // overflow-y: scroll;
-  
+
+    .empty-message {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 120px auto;
+    }
     .cart-items {
       height: 240px;
       display: flex;
