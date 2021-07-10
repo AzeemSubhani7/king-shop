@@ -60,7 +60,7 @@ class SignIn extends React.Component {
                     handleChange={this.handleChange}
                     required />
                     
-                    <div style={{ display: 'flex', justifyContent: 'center' }} >
+                    <div className='button-container' style={{ display: 'flex', justifyContent: 'center' }} >
                     <CustomButton type='submit'> Sign In </CustomButton>
                     <GoogleButton 
                     type='submit'

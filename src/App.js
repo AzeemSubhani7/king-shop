@@ -11,8 +11,9 @@ import SignInSignUp from './pages/signin-signup/SignInSignUp';
 import { setCurrentUser } from './redux/user/userActions';
 import CheckoutPage from './pages/checkout/checkout';
 // Styling
-import './App.css'
+// import './App.css'
 import { selectCurrentUser } from './redux/user/userSelector';
+import './App.css'
 
 
 class App extends React.Component {
