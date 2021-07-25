@@ -4,7 +4,9 @@ import './previewCollection.scss'
 
 
 const PreviewCollection = ({ title, items }) => {
+    console.log(items)
     return(
+        <div>
         <div className='collection-preview'>
             <h1>{title.toUpperCase()}</h1>
             <div className='preview'>
@@ -13,12 +15,16 @@ const PreviewCollection = ({ title, items }) => {
                 .filter((item, index) => index < 4)
                 .map((item) => {
                     return(
-                        <CollectionItem key={item.id} item={item} />
+                        <div>
+                            <CollectionItem key={item.id} item={item} />
+                        </div>
                     )
                 })
             }
             </div>
         </div>
+
+    </div>
     )
 }
 

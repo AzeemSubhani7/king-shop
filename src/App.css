@@ -143,6 +143,14 @@ body {
             -ms-user-select: none;
             user-select: none;
     }
+    .collection-item button {
+        width: 80%;
+        opacity: 0.9;
+        position: absolute;
+        top: 125px !important;
+        padding: 2px 24px !important;
+        display: none;
+    }
     .collection-item {
         width: 22vw;
         display: flex;
@@ -197,11 +205,22 @@ body {
         overflow: hidden;
         position: relative;
         transition: all 0.4s;
+        
+    }
+    .collection-item button {
+        width: 80%;
+        opacity: 0.9;
+        position: absolute;
+        top: 153px;
+        display: none;
     }
     .collection-page .items {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 5px;
+    }
+    .collection-button {
+        top: 50%;
     }
 }
 a {

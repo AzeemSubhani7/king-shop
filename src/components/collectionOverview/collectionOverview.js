@@ -6,9 +6,7 @@ import PreviewCollection from '../previewCollection/previewCollection';
 import './collectionOverview.scss'
 
 function CollectionOverview({ collections }) {
-    console.log('Yihua Sucks')
     console.log(collections)
-    console.log('Yihua Sucks')
     return (
         <div className='collection-overview'>
         {

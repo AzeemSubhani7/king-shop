@@ -10,6 +10,7 @@ import Header from './components/header/header';
 import SignInSignUp from './pages/signin-signup/SignInSignUp';
 import { setCurrentUser } from './redux/user/userActions';
 import CheckoutPage from './pages/checkout/checkout';
+import Footer from './components/footer/footer';
 // Styling
 // import './App.css'
 import { selectCurrentUser } from './redux/user/userSelector';
@@ -56,6 +57,7 @@ class App extends React.Component {
           render={() => this.props.currentUser ? (<Redirect to='/' />) : <SignInSignUp /> } />
 
         </Switch> 
+        <Footer />
       </div>
     </BrowserRouter>
     )
